@@ -1,11 +1,6 @@
-const getFortunes = require('./fortunes.json')
+import fortunes from './fortunes.json' with { type: 'json' };
 
-function getFortune() {
-    const randomIndex = Math.floor(Math.random() * getFortunes.length);
-    return getFortunes[randomIndex];
-}
-
-module.exports = getFortune;
-
-const message = getFortune();
-console.log(message);
+export const getFortune = () => {
+  const randomIndex = Math.floor(Math.random() * fortunes.length);
+  return fortunes[randomIndex];
+};
